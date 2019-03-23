@@ -1,38 +1,58 @@
-//led cube 3x3x3  
-// 2-10 anode pins & 11-13 cathode pins//
-int pinArray[] = {2, 3, 4, 5, 6, 7, 8, 9, 10};
-int ledState = LOW;
-int var   = 0;
-int count = 0;
-int timer = 30;
-int t50   = 50;
+int pinArray[] ={2, 3, 4, 5, 6, 7, 8, 9, 10};
+int ledState   = 0;
+int var        = 0;
+int count      = 0;
+int timer      = 30;
+int t200       = 200;
 
 
 //all pins to output//
-void setup(){
-  for (int i = 2; i <= 13; i++)
-  {
-    pinMode(i, OUTPUT);
-  }
+void setup()
+ {
+ for (int i = 2; i <= 13; i++)
+ {
+  pinMode(i, OUTPUT);
+ }
 }
-// H(pinnumber) sets pin to HIGH or LOW//
-void H(int r)
+// Kolom(pinnumber) sets pin to HIGH or LOW//
+void Kolom(int r)
 {
-  ledState = digitalRead(r);
+   ledState = digitalRead(r);
    
   if (ledState == HIGH)
   {
-    digitalWrite(r, LOW);
+   digitalWrite(r, LOW);
   }
   else
   {
-    digitalWrite(r, HIGH);
+   digitalWrite(r, HIGH);
   }
 }
+void Layer(int number)
+ {
+  switch (number) 
+ {
+  case 1:
+   digitalWrite(11, HIGH);
+   digitalWrite(12, LOW);
+   digitalWrite(13, LOW);
+  break;
+  case 2:
+   digitalWrite(12, HIGH);
+   digitalWrite(11, LOW);
+   digitalWrite(13, LOW);
+  break;
+  case 3:
+   digitalWrite(13, HIGH);
+   digitalWrite(12, LOW);
+   digitalWrite(11, LOW);
+ }
+}
 
-void loop() {
+void loop()
+ {
 //knightrider layer by layer//
-   H(11);
+   Layer(1);
   for (count=0;count<8;count++) {
    digitalWrite(pinArray[count], HIGH);
    delay(timer);
@@ -49,8 +69,7 @@ void loop() {
    digitalWrite(pinArray[count], LOW);
    delay(timer*2);
   }
-   H(11);
-   H(12);
+   Layer(2);
   for (count=0;count<8;count++) {
    digitalWrite(pinArray[count], HIGH);
    delay(timer);
@@ -67,8 +86,7 @@ void loop() {
    digitalWrite(pinArray[count], LOW);
    delay(timer*2);
   }
-   H(12);
-   H(13);
+   Layer(3);
   for (count=0;count<8;count++) {
    digitalWrite(pinArray[count], HIGH);
    delay(timer);
@@ -85,22 +103,23 @@ void loop() {
    digitalWrite(pinArray[count], LOW);
    delay(timer*2);
   }
-   H(13);
 ////end effect 1////
 
 //10x layer by layer//
-   digitalWrite(pinArray[9], HIGH);
-   while (var < 10)
+  for (int i = 2; i <= 13; i++)
   {
-   H(13);
-   delay(t50);
-   H(13);
-   H(12);
-   delay(t50);
-   H(12);
-   H(11);
-   delay(t50);
-   H(11);
+   pinMode(i, HIGH);
+  }
+  while (var < 10)
+  {
+   Layer(3);
+   delay(t200);
+   Layer(2);
+   delay(t200);
+   Layer(1);
+   delay(t200);
+   digitalWrite(pinArray[9], LOW);
+   delay(t200);
  }
 //end//
 }
