@@ -1,0 +1,106 @@
+//led cube 3x3x3  
+// 2-10 anode pins & 11-13 cathode pins//
+int pinArray[] = {2, 3, 4, 5, 6, 7, 8, 9, 10};
+int ledState = LOW;
+int var   = 0;
+int count = 0;
+int timer = 30;
+int t50   = 50;
+
+
+//all pins to output//
+void setup(){
+  for (int i = 2; i <= 13; i++)
+  {
+    pinMode(i, OUTPUT);
+  }
+}
+// H(pinnumber) sets pin to HIGH or LOW//
+void H(int r)
+{
+  ledState = digitalRead(r);
+   
+  if (ledState == HIGH)
+  {
+    digitalWrite(r, LOW);
+  }
+  else
+  {
+    digitalWrite(r, HIGH);
+  }
+}
+
+void loop() {
+//knightrider layer by layer//
+   H(11);
+  for (count=0;count<8;count++) {
+   digitalWrite(pinArray[count], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count + 1], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count], LOW);
+   delay(timer*2);
+  }
+  for (count=8;count>0;count--) {
+   digitalWrite(pinArray[count], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count - 1], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count], LOW);
+   delay(timer*2);
+  }
+   H(11);
+   H(12);
+  for (count=0;count<8;count++) {
+   digitalWrite(pinArray[count], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count + 1], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count], LOW);
+   delay(timer*2);
+  }
+  for (count=8;count>0;count--) {
+   digitalWrite(pinArray[count], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count - 1], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count], LOW);
+   delay(timer*2);
+  }
+   H(12);
+   H(13);
+  for (count=0;count<8;count++) {
+   digitalWrite(pinArray[count], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count + 1], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count], LOW);
+   delay(timer*2);
+  }
+  for (count=8;count>0;count--) {
+   digitalWrite(pinArray[count], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count - 1], HIGH);
+   delay(timer);
+   digitalWrite(pinArray[count], LOW);
+   delay(timer*2);
+  }
+   H(13);
+////end effect 1////
+
+//10x layer by layer//
+   digitalWrite(pinArray[9], HIGH);
+   while (var < 10)
+  {
+   H(13);
+   delay(t50);
+   H(13);
+   H(12);
+   delay(t50);
+   H(12);
+   H(11);
+   delay(t50);
+   H(11);
+ }
+//end//
+}
