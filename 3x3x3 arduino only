@@ -190,6 +190,9 @@ void loop()
   Kolom(count);
   delay(timer*2);
  }
+ //per x-as gaan er steeds 3 leds aan
+ //1 voor 1 maar zo snel dat het lijkt
+ //of ze constant branden
   Layer(1);
  for (int i = 0; i < 100; i++);
  {
