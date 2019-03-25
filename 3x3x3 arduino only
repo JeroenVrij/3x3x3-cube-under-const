@@ -125,7 +125,7 @@ void loop()
   Kolom(randNumber);
   randNumber = random(1, 3);
   Layer(randNumber);
-  randNumber = random(10 || 100);
+  randNumber = random(10, 100);
   delay(randNumber);
  }
 //knight rider effect 
