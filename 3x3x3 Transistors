@@ -46,6 +46,7 @@ void Kolom(int number)
  case 3:
   digitalWrite(4, HIGH);
   digitalWrite(pinArray3[8], LOW);
+ break;
  case 4:
   digitalWrite(5, HIGH);
   digitalWrite(pinArray4[8], LOW);
@@ -57,6 +58,7 @@ void Kolom(int number)
  case 6:
   digitalWrite(7, HIGH);
   digitalWrite(pinArray6[8], LOW);
+ break;
  case 7:
   digitalWrite(8, HIGH);
   digitalWrite(pinArray7[8], LOW);
@@ -68,6 +70,7 @@ void Kolom(int number)
  case 9:
   digitalWrite(10, HIGH);
   digitalWrite(pinArray9[8], LOW);
+ break;
  }
 
 }
@@ -96,7 +99,7 @@ void loop()
 //random gaan er leds branden
 //eerst laag voor laag daarna random
   Layer(1);
- for (int i = 0; i < 250; i++) 
+ for (int i = 0; i <=250; i++) 
  {
   randNumber = random(1, 9);
   Kolom(randNumber);
@@ -104,7 +107,7 @@ void loop()
   delay(randNumber);
  }
   Layer(2);
- for (int i = 0; i < 250; i++) 
+ for (int i = 0; i <=250; i++) 
  {
   randNumber = random(1, 9);
   Kolom(randNumber);
@@ -112,14 +115,14 @@ void loop()
   delay(randNumber);
  }
   Layer(3);
- for (int i = 0; i < 250; i++) 
+ for (int i = 0; i <=250; i++) 
  {
   randNumber = random(1, 9);
   Kolom(randNumber);
   randNumber = random(10,100);
   delay(randNumber);
  }
- for (int i = 0; i < 250; i++);
+ for (int i = 0; i <=250; i++);
  {
   randNumber = random(1, 9);
   Kolom(randNumber);
@@ -194,7 +197,7 @@ void loop()
  //1 voor 1 maar zo snel dat het lijkt
  //of ze constant branden
   Layer(1);
- for (int i = 0; i < 100; i++);
+ for (int i = 0; i <=100; i++);
  {
   Kolom(1);
   delay(50);
@@ -203,7 +206,7 @@ void loop()
   Kolom(3);
   delay(50);
  }
- for (int i = 0; i < 100; i++);
+ for (int i = 0; i <=100; i++);
  {
   Kolom(4);
   delay(50);
@@ -212,7 +215,7 @@ void loop()
   Kolom(6);
   delay(50);
  }
- for (int i = 0; i < 100; i++);
+ for (int i = 0; i <=100; i++);
  {
   Kolom(7);
   delay(50);
@@ -222,7 +225,7 @@ void loop()
   delay(50);
  }
   Layer(2);
- for (int i = 0; i < 100; i++);
+ for (int i = 0; i <=100; i++);
  {
   Kolom(1);
   delay(50);
@@ -231,7 +234,7 @@ void loop()
   Kolom(3);
   delay(50);
  }
- for (int i = 0; i < 100; i++);
+ for (int i = 0; i <=100; i++);
  {
   Kolom(4);
   delay(50);
@@ -240,7 +243,7 @@ void loop()
   Kolom(6);
   delay(50);
  }
- for (int i = 0; i < 100; i++);
+ for (int i = 0; i <=100; i++);
  {
   Kolom(7);
   delay(50);
@@ -250,7 +253,7 @@ void loop()
   delay(50);
  }
   Layer(3);
- for (int i = 0; i < 100; i++);
+ for (int i = 0; i <=100; i++);
  {
   Kolom(1);
   delay(50);
@@ -259,7 +262,7 @@ void loop()
   Kolom(3);
   delay(50);
  }
- for (int i = 0; i < 100; i++);
+ for (int i = 0; i <=100; i++);
  {
   Kolom(4);
   delay(50);
@@ -268,7 +271,7 @@ void loop()
   Kolom(6);
   delay(50);
  }
- for (int i = 0; i < 100; i++);
+ for (int i = 0; i <=100; i++);
  {
   Kolom(7);
   delay(50);
