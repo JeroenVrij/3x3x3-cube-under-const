@@ -1,0 +1,89 @@
+int count = 0;
+long randNumber;
+long randNumber1;
+long randNumber2;
+long randNumber3;
+  
+
+void setup()
+{ 
+ for (int i = 0; i <= 13; i++) 
+ {
+  pinMode(i, OUTPUT);
+ }
+ for (int i = 11; i <= 13; i++) 
+ {
+  digitalWrite(i, HIGH);
+ }
+  randomSeed(analogRead(0));
+}
+void loop()
+{ 
+  for (int i = 0; i <= 20; i++) 
+ {
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  digitalWrite(11,HIGH);
+  delay(400);
+  digitalWrite(11, LOW);
+  digitalWrite(12,HIGH);
+  delay(400);
+  digitalWrite(12, LOW);
+  digitalWrite(13,HIGH);
+  digitalWrite(randNumber, LOW);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  digitalWrite(13, LOW);
+  digitalWrite(12, HIGH);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(11, HIGH);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  randNumber = random(2, 10);
+  digitalWrite(randNumber, HIGH);
+  delay(200);
+  digitalWrite(randNumber, LOW);
+  }
+  
+  
+}
