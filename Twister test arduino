@@ -1,0 +1,115 @@
+int count = 0;
+long randNumber;
+long randNumber1;
+long randNumber2;
+long randNumber3;
+  
+
+void setup()
+{ 
+ for (int i = 0; i <= 13; i++) 
+ {
+  pinMode(i, OUTPUT);
+ }
+ for (int i = 11; i <= 13; i++) 
+ {
+  digitalWrite(i, HIGH);
+ }
+  randomSeed(analogRead(0));
+}
+void loop()
+{ 
+  digitalWrite(11, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(4, HIGH);
+  digitalWrite(8, HIGH);
+  digitalWrite(10, HIGH);
+  delay(1000);
+  digitalWrite(12, LOW);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
+  digitalWrite(2, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(10, LOW);
+  digitalWrite(3, HIGH);
+  digitalWrite(5, HIGH);
+  digitalWrite(7, HIGH);
+  digitalWrite(9, HIGH);
+  delay(1000);
+  digitalWrite(3, LOW);
+  digitalWrite(5, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(9, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(4, HIGH);
+  digitalWrite(8, HIGH);
+  digitalWrite(10, HIGH);
+  delay(800);
+  digitalWrite(2, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(10, LOW);
+  digitalWrite(3, HIGH);
+  digitalWrite(5, HIGH);
+  digitalWrite(7, HIGH);
+  digitalWrite(9, HIGH);
+  delay(700);
+  digitalWrite(3, LOW);
+  digitalWrite(5, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(9, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(4, HIGH);
+  digitalWrite(8, HIGH);
+  digitalWrite(10, HIGH);
+  delay(600);
+  digitalWrite(2, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(10, LOW);
+  digitalWrite(3, HIGH);
+  digitalWrite(5, HIGH);
+  digitalWrite(7, HIGH);
+  digitalWrite(9, HIGH);
+  delay(500);
+  digitalWrite(3, LOW);
+  digitalWrite(5, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(9, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(4, HIGH);
+  digitalWrite(8, HIGH);
+  digitalWrite(10, HIGH);
+  delay(400);
+  digitalWrite(2, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(10, LOW);
+  digitalWrite(3, HIGH);
+  digitalWrite(5, HIGH);
+  digitalWrite(7, HIGH);
+  digitalWrite(9, HIGH);
+  delay(300);
+  digitalWrite(3, LOW);
+  digitalWrite(5, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(9, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(4, HIGH);
+  digitalWrite(8, HIGH);
+  digitalWrite(10, HIGH);
+  delay(200);
+  digitalWrite(3, LOW);
+  digitalWrite(5, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(9, LOW);
+  digitalWrite(2, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+  digitalWrite(13, HIGH);
+}
