@@ -1,0 +1,80 @@
+int count = 0;
+
+void setup()
+{ 
+ for (int i = 0; i <= 13; i++) 
+ {
+  pinMode(i, OUTPUT);
+ }
+ for (int i = 11; i <= 13; i++) 
+ {
+  digitalWrite(i, HIGH);
+ }
+}
+void loop()
+{
+  digitalWrite(11, LOW);
+ for (count=1;count<11;count++) 
+ {
+  digitalWrite(count, HIGH);
+  delay(500);
+  digitalWrite(count+1, HIGH);
+  delay(500);
+  digitalWrite(count, LOW);
+  delay(1000);
+ }
+  digitalWrite(12, LOW);
+  digitalWrite(11, HIGH);
+ for (count=1;count<11;count--) 
+ {
+  digitalWrite(count, HIGH);
+  delay(500);
+  digitalWrite(count-1, HIGH);
+  delay(500);
+  digitalWrite(count, LOW);
+  delay(1000);
+ }
+  digitalWrite(12, HIGH);
+  digitalWrite(13, LOW);
+ for (count=1;count<11;count++) 
+ {
+  digitalWrite(count, HIGH);
+  delay(500);
+  digitalWrite(count+1, HIGH);
+  delay(500);
+  digitalWrite(count, LOW);
+  delay(1000);
+ }
+ for (count=1;count<11;count--) 
+ {
+  digitalWrite(count, HIGH);
+  delay(500);
+  digitalWrite(count-1, HIGH);
+  delay(500);
+  digitalWrite(count, LOW);
+  delay(1000);
+ }
+  digitalWrite(13, HIGH);
+  digitalWrite(12, LOW);
+ for (count=1;count<11;count++) 
+ {
+  digitalWrite(count, HIGH);
+  delay(500);
+  digitalWrite(count+1, HIGH);
+  delay(500);
+  digitalWrite(count, LOW);
+  delay(1000);
+ }
+  digitalWrite(12, HIGH);
+  digitalWrite(11, LOW);
+ for (count=1;count<11;count--) 
+ {
+  digitalWrite(count, HIGH);
+  delay(500);
+  digitalWrite(count-1, HIGH);
+  delay(500);
+  digitalWrite(count, LOW);
+  delay(1000);
+  digitalWrite(11, HIGH);
+ }
+}
