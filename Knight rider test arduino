@@ -25,7 +25,7 @@ void loop()
  }
   digitalWrite(12, LOW);
   digitalWrite(11, HIGH);
- for (count=1;count<11;count--) 
+ for (count=10;count<1;count--) 
  {
   digitalWrite(count, HIGH);
   delay(500);
@@ -45,7 +45,7 @@ void loop()
   digitalWrite(count, LOW);
   delay(1000);
  }
- for (count=1;count<11;count--) 
+ for (count=10;count<1;count--) 
  {
   digitalWrite(count, HIGH);
   delay(500);
@@ -67,7 +67,7 @@ void loop()
  }
   digitalWrite(12, HIGH);
   digitalWrite(11, LOW);
- for (count=1;count<11;count--) 
+ for (count=10;count<1;count--) 
  {
   digitalWrite(count, HIGH);
   delay(500);
