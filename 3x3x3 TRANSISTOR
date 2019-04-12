@@ -30,19 +30,19 @@ void Layer(int range,int state, int Number)
     case 1:    
        digitalWrite(12,1);
        digitalWrite(13,1);
-       digitalWrite(range +10, state);
+       digitalWrite(range +10,1 - state);
        delay(Number);
       break;
     case 2:
        digitalWrite(11,1);
        digitalWrite(13,1);
-       digitalWrite(range +10, state); 
+       digitalWrite(range +10,1- state); 
        delay(Number);    
       break;
     case 3:    
        digitalWrite(12,1);
        digitalWrite(11,1);
-       digitalWrite(range +10, state);
+       digitalWrite(range +10,1 - state);
        delay(Number);  
       break;
   }
