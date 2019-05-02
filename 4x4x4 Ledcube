@@ -1,0 +1,671 @@
+int randNumber = 0;
+int randNumber1 = 0;
+int randNumber2 = 0;
+int randNumber3 = 0;
+int randNumber4 = 0;
+int randNumber5 = 0;
+int randNumber6 = 0;
+int randNumber7 = 0;
+int randNumber8 = 0;
+
+
+void setup() {
+
+  for (int i = 0; i <= 19 ; i++) {
+    pinMode(i, OUTPUT);
+  }
+  for (int i = 16; i <= 19 ; i++) {
+    digitalWrite(i, HIGH);
+  }
+  randomSeed(analogRead(0));
+
+}
+void Layer(int l) {
+  for (int i = 1; i <= 4; i++)
+    digitalWrite (15 + i, l != i);
+}
+void Led(int B, int C) {
+
+
+  digitalWrite(B % 16, C);
+  Layer((B + 15) / 16);
+
+}
+void Laag(int A, int B) {
+
+  for (int i = 1; i <= 16 ; i++) {
+    Led(i + ((A - 1) * 16), B);
+  }
+
+}
+void Off() {
+  for (int i = 16; i <= 19 ; i++) {
+    digitalWrite(i, HIGH);
+  }
+  for (int i = 0; i <= 15 ; i++) {
+    digitalWrite(i, LOW);
+  }
+}
+
+void X(int A, int B) {
+
+  for (int i = 1; i <= 4 ; i++) {
+    Led(i + (A - 1) * 4, B);
+  }
+
+}
+void Y(int A, int B) {
+
+
+  for(int n=0; n<4; n++)
+  Led(((A-1)+n*4+((A-1)/4)*12+1),B);}
+
+void Vlakken() {
+  for (int D = 0; D <= 3 ; D ++) {
+    for (int i = 0; i <= 100 ; i ++) {
+      X(1, 1); delay(1); Off(); X(5, 1); delay(1); Off(); X(9, 1); delay(1); Off(); X(13, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 100 ; i ++) {
+      X(1, 1); delay(1); Off(); X(6, 1); delay(1); Off(); X(11, 1); delay(1); Off(); X(16, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 100 ; i ++) {
+      X(1, 1); delay(1); Off(); X(2, 1); delay(1); Off(); X(3, 1); delay(1); Off(); X(4, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 100 ; i ++) {
+      X(4, 1); delay(1); Off(); X(7, 1); delay(1); Off(); X(10, 1); delay(1); Off(); X(13, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 100 ; i ++) {
+      X(4, 1); delay(1); Off(); X(8, 1); delay(1); Off(); X(12, 1); delay(1); Off(); X(16, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 100 ; i ++) {
+      X(1, 1); delay(1); Off(); X(6, 1); delay(1); Off(); X(11, 1); delay(1); Off(); X(16, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 100 ; i ++) {
+      X(13, 1); delay(1); Off(); X(14, 1); delay(1); Off(); X(15, 1); delay(1); Off(); X(16, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 100 ; i ++) {
+      X(4, 1); delay(1); Off(); X(7, 1); delay(1); Off(); X(10, 1); delay(1); Off(); X(13, 1); delay(1); Off();
+    }
+  }
+
+}
+void Jumper() {
+  for (int i = 0; i <= 20 ; i ++) {
+    randNumber = random(1, 17);
+    Led(randNumber, 1);
+    delay(60);
+    Led(randNumber + 16, 1);
+    delay(60);
+    Led(randNumber + 32, 1);
+    delay(60);
+    Led(randNumber + 48, 1);
+    delay(60);
+    Led(randNumber + 32, 1);
+    delay(60);
+    Led(randNumber + 16, 1);
+    delay(60);
+    Led(randNumber, 1);
+    delay(60);
+    Off();
+  }
+}
+void Salto() {
+  for (int D = 0; D <= 4 ; D ++) {
+    X(1, 1);
+    delay(80);
+    X(2, 1);
+    delay(80);
+    X(3, 1);
+    delay(80);
+    X(4, 1);
+    delay(80);
+
+    for (int i = 0; i <= 20 ; i ++) {
+      X(1, 1); delay(1); Off(); X(2, 1); delay(1); Off(); X(3, 1); delay(1); Off(); X(4, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(8, 1); delay(1); Off(); X(2, 1); delay(1); Off(); X(3, 1); delay(1); Off(); X(4, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(8, 1); delay(1); Off(); X(12, 1); delay(1); Off(); X(3, 1); delay(1); Off(); X(4, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(8, 1); delay(1); Off(); X(12, 1); delay(1); Off(); X(16, 1); delay(1); Off(); X(4, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(8, 1); delay(1); Off(); X(12, 1); delay(1); Off(); X(16, 1); delay(1); Off(); X(15, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(14, 1); delay(1); Off(); X(12, 1); delay(1); Off(); X(16, 1); delay(1); Off(); X(15, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(14, 1); delay(1); Off(); X(13, 1); delay(1); Off(); X(16, 1); delay(1); Off(); X(15, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(14, 1); delay(1); Off(); X(13, 1); delay(1); Off(); X(9, 1); delay(1); Off(); X(15, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(14, 1); delay(1); Off(); X(13, 1); delay(1); Off(); X(9, 1); delay(1); Off(); X(5, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(1, 1); delay(1); Off(); X(13, 1); delay(1); Off(); X(9, 1); delay(1); Off(); X(5, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(1, 1); delay(1); Off(); delay(1); Off(); X(9, 1); delay(1); Off(); X(5, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(1, 1); delay(1); Off(); delay(1); Off(); delay(1); Off(); X(5, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      X(1, 1); delay(1); Off(); delay(1); Off(); delay(1); Off(); delay(1); Off();
+    }
+
+    Y(1, 1);
+    delay(80);
+    Y(2, 1);
+    delay(80);
+    Y(3, 1);
+    delay(80);
+    Y(4, 1);
+    delay(80);
+
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(1, 1); delay(1); Off(); Y(2, 1); delay(1); Off(); Y(3, 1); delay(1); Off(); Y(4, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(8, 1); delay(1); Off(); Y(2, 1); delay(1); Off(); Y(3, 1); delay(1); Off(); Y(4, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(8, 1); delay(1); Off(); Y(12, 1); delay(1); Off(); Y(3, 1); delay(1); Off(); Y(4, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(8, 1); delay(1); Off(); Y(12, 1); delay(1); Off(); Y(16, 1); delay(1); Off(); Y(4, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(8, 1); delay(1); Off(); Y(12, 1); delay(1); Off(); Y(16, 1); delay(1); Off(); Y(15, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(14, 1); delay(1); Off(); Y(12, 1); delay(1); Off(); Y(16, 1); delay(1); Off(); Y(15, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(14, 1); delay(1); Off(); Y(13, 1); delay(1); Off(); Y(16, 1); delay(1); Off(); Y(15, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(14, 1); delay(1); Off(); Y(13, 1); delay(1); Off(); Y(9, 1); delay(1); Off(); Y(15, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(14, 1); delay(1); Off(); Y(13, 1); delay(1); Off(); Y(9, 1); delay(1); Off(); Y(5, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(1, 1); delay(1); Off(); Y(13, 1); delay(1); Off(); Y(9, 1); delay(1); Off(); Y(5, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(1, 1); delay(1); Off(); delay(1); Off(); Y(9, 1); delay(1); Off(); Y(5, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(1, 1); delay(1); Off(); delay(1); Off(); delay(1); Off(); Y(5, 1); delay(1); Off();
+    }
+    for (int i = 0; i <= 20 ; i ++) {
+      Y(1, 1); delay(1); Off(); delay(1); Off(); delay(1); Off(); delay(1); Off();
+    }
+  }
+
+}
+void Heli() {
+  for (int D = 0; D <= 5 ; D ++) {
+    for (int i = 0; i <= 3 ; i += 1) {
+
+      for (int A = 0; A <= 100 ; A ++) {
+        Led(1 + i, 1); Led(16 - i, 1); delay(1); Off();
+        Led(17 + i, 1); Led(32 - i, 1); delay(1); Off();
+        Led(33 + i, 1); Led(48 - i, 1); delay(1); Off();
+        Led(49 + i, 1); Led(64 - i, 1); delay(1); Off();
+      }
+    }
+  }
+  for (int i = 4; i <= 8 ; i += 4) {
+
+    for (int A = 0; A <= 100 ; A ++) {
+      Led(4 + i, 1); Led(13 - i, 1); delay(1); Off();
+      Led(20 + i, 1); Led(29 - i, 1); delay(1); Off();
+      Led(36 + i, 1); Led(45 - i, 1); delay(1); Off();
+      Led(52 + i, 1); Led(61 - i, 1); delay(1); Off();
+    }
+  }
+}
+void Chain() {
+  for (int A = 0; A <= 3 ; A ++) {
+    for (int A = 0; A <= 30 ; A ++) {
+      X(1, 1); delay(1); Off(); X(2, 1); delay(1); Off(); X(3, 1); delay(1); Off(); X(4, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      X(5, 1); delay(1); Off(); X(2, 1); delay(1); Off(); X(3, 1); delay(1); Off(); X(4, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      X(9, 1); delay(1); Off(); X(6, 1); delay(1); Off(); X(3, 1); delay(1); Off(); X(4, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      X(13, 1); delay(1); Off(); X(10, 1); delay(1); Off(); X(7, 1); delay(1); Off(); X(4, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      X(9, 1); delay(1); Off(); X(14, 1); delay(1); Off(); X(11, 1); delay(1); Off(); X(8, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      X(5, 1); delay(1); Off(); X(10, 1); delay(1); Off(); X(15, 1); delay(1); Off(); X(12, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      X(1, 1); delay(1); Off(); X(6, 1); delay(1); Off(); X(11, 1); delay(1); Off(); X(16, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      X(1, 1); delay(1); Off(); X(2, 1); delay(1); Off(); X(7, 1); delay(1); Off(); X(12, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      X(1, 1); delay(1); Off(); X(2, 1); delay(1); Off(); X(3, 1); delay(1); Off(); X(8, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      X(1, 1); delay(1); Off(); X(2, 1); delay(1); Off(); X(3, 1); delay(1); Off(); X(4, 1); delay(1); Off();
+    }
+  }
+
+  for (int A = 0; A <= 3 ; A ++) {
+    for (int A = 0; A <= 30 ; A ++) {
+      Y(1, 1); delay(1); Off(); Y(2, 1); delay(1); Off(); Y(3, 1); delay(1); Off(); Y(4, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      Y(5, 1); delay(1); Off(); Y(2, 1); delay(1); Off(); Y(3, 1); delay(1); Off(); Y(4, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      Y(9, 1); delay(1); Off(); Y(6, 1); delay(1); Off(); Y(3, 1); delay(1); Off(); Y(4, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      Y(13, 1); delay(1); Off(); Y(10, 1); delay(1); Off(); Y(7, 1); delay(1); Off(); Y(4, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      Y(9, 1); delay(1); Off(); Y(14, 1); delay(1); Off(); Y(11, 1); delay(1); Off(); Y(8, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      Y(5, 1); delay(1); Off(); Y(10, 1); delay(1); Off(); Y(15, 1); delay(1); Off(); Y(12, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      Y(1, 1); delay(1); Off(); Y(6, 1); delay(1); Off(); Y(11, 1); delay(1); Off(); Y(16, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      Y(1, 1); delay(1); Off(); Y(2, 1); delay(1); Off(); Y(7, 1); delay(1); Off(); Y(12, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      Y(1, 1); delay(1); Off(); Y(2, 1); delay(1); Off(); Y(3, 1); delay(1); Off(); Y(8, 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 30 ; A ++) {
+      Y(1, 1); delay(1); Off(); Y(2, 1); delay(1); Off(); Y(3, 1); delay(1); Off(); Y(4, 1); delay(1); Off();
+    }
+  }
+
+
+
+}
+void Random() {
+  for (int i = 0; i <= 4 ; i ++) {
+    for (int A = 0; A <= 100 ; A ++) {
+      randNumber = random(1, 65);
+      Led(randNumber, 1);
+      delay(10);
+      Led(randNumber, 0);
+    }
+    Off();
+    delay(400);
+  }
+
+}
+void Round() {
+  for (int A = 0; A <= 100 ; A ++) {
+    X(1 , 1);  delay(1); Off();
+    X(16 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    X(2 , 1);  delay(1); Off();
+    X(15 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    X(3 , 1);  delay(1); Off();
+    X(14 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    X(4 , 1);  delay(1); Off();
+    X(13 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    X(8 , 1);  delay(1); Off();
+    X(9 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    X(7 , 1);  delay(1); Off();
+    X(10 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    X(6 , 1);  delay(1); Off();
+    X(11 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    X(5 , 1);  delay(1); Off();
+    X(12 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    X(9 , 1);  delay(1); Off();
+    X(8 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    X(10 , 1);  delay(1); Off();
+    X(7 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    X(11 , 1);  delay(1); Off();
+    X(6 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    X(12 , 1);  delay(1); Off();
+    X(5 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 500 ; A ++) {
+    X(16 , 1);  delay(1); Off();
+    X(1 , 1); delay(1); Off();
+  }
+
+
+  for (int A = 0; A <= 500 ; A ++) {
+    Led(64, 1); Led(59, 1); Led(54, 1); Led(49, 1); delay(1); Off();
+
+    Led(1, 1); Led(6, 1); Led(11, 1); Led(16, 1); delay(1); Off();
+  }
+
+  for (int A = 0; A <= 500 ; A ++) {
+    Y(1 , 1);  delay(1); Off();
+    Y(16 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    Y(2 , 1);  delay(1); Off();
+    Y(15 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    Y(3 , 1);  delay(1); Off();
+    Y(14 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    Y(4 , 1);  delay(1); Off();
+    Y(13 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    Y(8 , 1);  delay(1); Off();
+    Y(9 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    Y(7 , 1);  delay(1); Off();
+    Y(10 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    Y(6 , 1);  delay(1); Off();
+    Y(11 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    Y(5 , 1);  delay(1); Off();
+    Y(12 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    Y(9 , 1);  delay(1); Off();
+    Y(8 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    Y(10 , 1);  delay(1); Off();
+    Y(7 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    Y(11 , 1);  delay(1); Off();
+    Y(6 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 100 ; A ++) {
+    Y(12 , 1);  delay(1); Off();
+    Y(5 , 1); delay(1); Off();
+  }
+  for (int A = 0; A <= 500 ; A ++) {
+    Y(16 , 1);  delay(1); Off();
+    Y(1 , 1); delay(1); Off();
+  }
+  for (int i = 0; i <= 4 ; i ++) {
+    for (int A = 0; A <= 100 ; A ++) {
+      Y(15 , 1);  delay(1); Off();
+      Y(2 , 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 100 ; A ++) {
+      Y(14 , 1);  delay(1); Off();
+      Y(3 , 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 100 ; A ++) {
+      Y(13 , 1);  delay(1); Off();
+      Y(4 , 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 100 ; A ++) {
+      Y(9 , 1);  delay(1); Off();
+      Y(8 , 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 100 ; A ++) {
+      Y(5 , 1);  delay(1); Off();
+      Y(12 , 1); delay(1); Off();
+    }
+    for (int A = 0; A <= 100 ; A ++) {
+      Y(16 , 1);  delay(1); Off();
+      Y(1 , 1); delay(1); Off();
+    }
+  }
+}
+void Light() {
+  for (int i = 0; i <= 4 ; i ++) {
+    for (int A = 0; A <= 100 ; A ++) {
+      randNumber = random(1, 17);
+      Y(randNumber, 1);
+      delay(20);
+      Off();
+    }
+    delay(400);
+  }
+
+  for (int i = 0; i <= 4 ; i ++) {
+    for (int A = 0; A <= 100 ; A ++) {
+      randNumber = random(1, 17);
+      X(randNumber, 1);
+      delay(20);
+      Off();
+    }
+    delay(400);
+  }
+
+  for (int i = 0; i <= 4 ; i ++) {
+    for (int A = 0; A <= 100 ; A ++) {
+      randNumber = random(1, 5);
+      Laag(randNumber, 1);
+      delay(20);
+      Off();
+    }
+
+    delay(400);
+  }
+}
+void Updraft() {
+  int randNumber = random(1, 17);
+  int randNumber1 = random(1, 17);
+  int randNumber2 = random(1, 17);
+  int randNumber3 = random(1, 17);
+  int randNumber4 = random(1, 17);
+  int randNumber5 = random(1, 17);
+  int randNumber6 = random(1, 17);
+  int randNumber7 = random(1, 17);
+  int randNumber8 = random(1, 17);
+  for (int A = 0; A <= 20 ; A ++) {
+    for (int i = 0; i <= 100 ; i ++) {
+      Led(randNumber1, 1);
+    }
+
+    for (int i = 0; i <= 50 ; i ++) {
+      Led(randNumber1, 0);
+      Led(randNumber1 + 16, 1);
+      delay(1);
+      Off();
+      Led(randNumber2, 1);
+      delay(1);
+      Off();
+    }
+
+    for (int i = 0; i <= 33 ; i ++) {
+      Led(randNumber1 + 16, 0);
+      Led(randNumber1 + 32, 1);
+      delay(1);
+      Off();
+      Led(randNumber2, 0);
+      Led(randNumber2 + 16, 1);
+      delay(1);
+      Off();
+      Led(randNumber3, 1);
+      delay(1);
+      Off();
+    }
+
+    for (int i = 0; i <= 15 ; i ++) {
+      Led(randNumber1 + 32, 0);
+      Led(randNumber1 + 48, 1);
+      delay(1);
+      Off();
+      Led(randNumber2 + 16, 0);
+      Led(randNumber2 + 32, 1);
+      delay(1);
+      Off();
+      Led(randNumber3, 0);
+      Led(randNumber3 + 16, 1);
+      delay(1);
+      Off();
+      Led(randNumber4, 1);
+      delay(1);
+      Off();
+    }
+
+    for (int i = 0; i <= 15 ; i ++) {
+      Led(randNumber1 + 48, 0);
+      Led(randNumber1 , 1);
+      delay(1);
+      Off();
+      Led(randNumber2 + 32, 0);
+      Led(randNumber2 + 48, 1);
+      delay(1);
+      Off();
+      Led(randNumber3 + 16, 0);
+      Led(randNumber3 + 32, 1);
+      delay(1);
+      Off();
+      Led(randNumber4, 0);
+      Led(randNumber4 + 16, 1);
+      delay(1);
+      Off();
+      Led(randNumber5, 1);
+      delay(1);
+      Off();
+    }
+
+    for (int i = 0; i <= 15 ; i ++) {
+      Led(randNumber1, 0);
+      Led(randNumber1 + 16 , 1);
+      delay(1);
+      Off();
+      Led(randNumber2 + 48, 0);
+      Led(randNumber6, 1);
+      delay(1);
+      Off();
+      Led(randNumber3 + 32, 0);
+      Led(randNumber3 + 48, 1);
+      delay(1);
+      Off();
+      Led(randNumber4 + 16, 0);
+      Led(randNumber4 + 32, 1);
+      delay(1);
+      Off();
+      Led(randNumber5, 0);
+      Led(randNumber5 + 16, 1);
+      delay(1);
+      Off();
+    }
+
+    for (int i = 0; i <= 15 ; i ++) {
+      Led(randNumber1 + 16, 0);
+      Led(randNumber1 + 32 , 1);
+      delay(1);
+      Off();
+      Led(randNumber6, 0);
+      Led(randNumber6 + 16, 1);
+      delay(1);
+      Off();
+      Led(randNumber3 + 48, 0);
+      Led(randNumber7, 1);
+      delay(1);
+      Off();
+      Led(randNumber4 + 32, 0);
+      Led(randNumber4 + 48, 1);
+      delay(1);
+      Off();
+      Led(randNumber5 + 16, 0);
+      Led(randNumber5 + 32, 1);
+      delay(1);
+      Off();
+    }
+
+    for (int i = 0; i <= 15 ; i ++) {
+      Led(randNumber1 + 32, 0);
+      Led(randNumber1 + 48 , 1);
+      delay(1);
+      Off();
+      Led(randNumber6 + 16, 0);
+      Led(randNumber6 + 32, 1);
+      delay(1);
+      Off();
+      Led(randNumber7, 0);
+      Led(randNumber7 + 16, 1);
+      delay(1);
+      Off();
+      Led(randNumber4 + 48, 0);
+      Led(randNumber4 , 1);
+      delay(1);
+      Off();
+      Led(randNumber5 + 32, 0);
+      Led(randNumber5 + 48, 1);
+      delay(1);
+      Off();
+    }
+  }
+}
+void Loop() {
+  Vlakken();
+  Off(); delay(1000);
+  Jumper();
+  Off(); delay(1000);
+  Heli();
+  Off(); delay(1000);
+  Salto();
+  Off(); delay(1000);
+  Chain();
+  Off(); delay(1000);
+  Random();
+  Off(); delay(1000);
+  Round();
+  Off(); delay(1000);
+  Light();
+  Off(); delay(1000);
+  Updraft();
+  Off(); delay(1000);
+
+}
+
+void loop() {
+
+
+  Loop();
+
+
+
+
+
+}
