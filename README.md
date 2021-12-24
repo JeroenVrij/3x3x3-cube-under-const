@@ -1,4 +1,4 @@
-        # 3x3x3-cube-under-const
+        # 4x4x4-cube-under-const
        Building my first ledcube
 
 
